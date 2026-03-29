@@ -11,10 +11,10 @@ pub const GENERAL: &[&str] = &[
     r"(?m)(--[^\r\n]*$|#[^\r\n]*$)|(/\*[\s\S]*?\*/)",
     // TAUTOLOGIES (boolean bypass)
     // Matches: OR 'a'='a', AND 1=1, OR true, OR 1 -- etc.
-    r#"(?i)\b(?:OR|AND)\b[\s\t\r\n/*]+(?:'[^']*'?\s*=\s*'?[^'\s]*'?|"[^"]*"?\s*=\s*"?[^"\s]*"?|\d+\s*=\s*\d+|\btrue\b|\bfalse\b)"#,
+    r#"(?i)[\d)'"]\s+\b(?:OR|AND)\b[\s\t\r\n/*]+(?:'[^']*'?\s*=\s*'?[^'\s]*'?|"[^"]*"?\s*=\s*"?[^"\s]*"?|\d+\s*=\s*\d+|\btrue\b|\bfalse\b)"#,
     // ALWAYS-TRUE / ALWAYS-FALSE SHORTCUTS
     // Matches: OR 1, AND 0, OR (1), etc. — simpler tautology forms
-    r"(?i)\b(?:OR|AND)\s+\d+\s*(?:[=<>!]|--|$|\))",
+    r#"(?i)[\d)'"]\s+\b(?:OR|AND)\s+\d+\s*(?:[=<>!]|--|$|\))"#,
     // DDL (Data Definition Language)
     // Matches: DROP TABLE, CREATE INDEX, ALTER VIEW, TRUNCATE TRIGGER, etc.
     r"(?i)\b(?:DROP|CREATE|ALTER|TRUNCATE)\s+(?:TABLE|INDEX|VIEW|TRIGGER|SCHEMA|DATABASE|SEQUENCE|PROCEDURE|FUNCTION|ROLE|USER)\b",
@@ -23,7 +23,7 @@ pub const GENERAL: &[&str] = &[
     r#"(?i)\b(?:DELETE\s+FROM|INSERT\s+INTO|UPDATE\s+[\w`"'\[]+[\w`"'\]]*\s+SET|REPLACE\s+INTO|MERGE\s+INTO)\b"#,
     // PERMISSIONS & EXECUTION
     // Matches: EXEC foo, EXECUTE bar, CALL proc, GRANT ..., REVOKE ...
-    r"(?i)\b(?:EXEC|EXECUTE)\s+\w+|\bCALL\s+\w+\s*\(|\b(?:GRANT|REVOKE)\b",
+    r"(?i)\b(?:EXEC|EXECUTE)\s+\w*_\w+\s*\(|\bCALL\s+\w*_\w+\s*\(|\b(?:GRANT|REVOKE)\b",
     // HEX / BINARY LITERALS
     // Matches: 0x1A2B, X'41424344'
     r"(?i)\b0x[0-9a-f]+\b|[Xx]'(?:[0-9a-fA-F]{2})+'",

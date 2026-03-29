@@ -10,6 +10,10 @@ test:
 	@echo "Running Python tests..."
 	uv run pytest
 
+test-wild:
+	@echo "Running Rust tests..."
+	cargo test --release -- --include-ignored test_validate_query_dataset --nocapture;
+
 update:
 	@echo "Updating dependencies..."
 	cargo update

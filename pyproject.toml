@@ -1,10 +1,25 @@
 [project]
 name = "injectdb"
 version = "0.0.1"
-description = "A Python library for detecting SQL injection patterns in input strings. Designed mainly for AI agents."
+description = "A Python library for detecting SQL injection patterns in input strings. Designed for AI agents."
+authors = [{ name = "Kanishk Navale", email = "navalekanishk@gmail.com" }]
+license = "MIT"
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.12,<4.0"
+keywords = ["sql", "injection", "security", "detection", "pyo3", "ai-agents"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
 dependencies = []
+
+[project.urls]
+Repository = "https://github.com/kanishknavale/injectdb"
 
 [build-system]
 requires = ["maturin>=1.7"]
@@ -16,7 +31,7 @@ bindings = "pyo3"
 features = ["pyo3/extension-module"]
 
 [dependency-groups]
-dev = ["maturin>=1.12.6", "pytest>=9.0.2"]
+dev = ["duckdb>=1.5.1", "maturin>=1.12.6", "pytest>=9.0.2", "tqdm>=4.67.3"]
 
 [tool.pytest.ini_options]
 addopts = "--color=yes --durations=10"
