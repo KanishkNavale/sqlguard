@@ -22,4 +22,4 @@ jobs:
             --auto \
             --delete-branch
         env:
-          GH_TOKEN: ${{ secrets.GITKAT }}
+          GITHUB_TOKEN: ${{ secrets.GITKAT }}
