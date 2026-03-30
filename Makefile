@@ -20,6 +20,7 @@ test-wild:
 update:
 	@echo "Updating dependencies..."
 	cargo update
+	uv sync --all-groups
 
 clean:
 	@echo "Cleaning build artifacts..."
