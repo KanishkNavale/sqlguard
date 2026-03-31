@@ -1,6 +1,6 @@
 [project]
 name = "sqlguard"
-version = "0.0.2"
+version = "0.0.3"
 description = "A Rust library with Python bindings for detecting SQL injection patterns in input strings. Built for speed and designed especially for AI agents that process or generate SQL queries."
 authors = [{ name = "Kanishk Navale", email = "navalekanishk@gmail.com" }]
 license = "MIT"
