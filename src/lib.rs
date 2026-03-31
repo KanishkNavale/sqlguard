@@ -42,7 +42,7 @@ fn py_analyze_query(py: Python<'_>, query: &str) -> PyResult<Py<PyDict>> {
 }
 
 #[pymodule]
-fn sqlguard(m: &Bound<'_, PyModule>) -> PyResult<()> {
+fn sqlhund(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(py_is_query_malicious, m)?)?;
     m.add_function(wrap_pyfunction!(py_analyze_query, m)?)?;
     Ok(())

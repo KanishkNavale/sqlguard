@@ -1,4 +1,4 @@
-use sqlguard::is_query_malicious;
+use sqlhund::is_query_malicious;
 
 #[cfg(test)]
 mod dataset_tests {

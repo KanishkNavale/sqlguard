@@ -1,9 +1,9 @@
 build:
-	@echo "Compiling sqlguard (dev)..."
+	@echo "Compiling sqlhund (dev)..."
 	uv run maturin develop
 
 release:
-	@echo "Compiling sqlguard (release)..."
+	@echo "Compiling sqlhund (release)..."
 	uv run maturin build --release
 
 clean:
@@ -11,7 +11,7 @@ clean:
 	cargo clean
 	uv cache clean
 	rm -rf target/ dist/ *.egg-info
-	rm -rf .venv/lib/python3.14/site-packages/sqlguard*
+	rm -rf .venv/lib/python3.14/site-packages/sqlhund*
 	find . -type f -name "*.pyc" -delete
 	find . -type d -name "__pycache__" -delete
 

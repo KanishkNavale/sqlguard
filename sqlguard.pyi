@@ -9,10 +9,10 @@ def is_query_malicious(query: str) -> bool:
         bool: True if an injection pattern is detected, False otherwise.
 
     Example:
-        >>> import sqlguard
-        >>> sqlguard.is_query_malicious("' OR 1=1 --")
+        >>> import sqlhund
+        >>> sqlhund.is_query_malicious("' OR 1=1 --")
         True
-        >>> sqlguard.is_query_malicious("SELECT id FROM users WHERE id = 1")
+        >>> sqlhund.is_query_malicious("SELECT id FROM users WHERE id = 1")
         False
     """
     ...
@@ -30,13 +30,13 @@ def analyze_query(query: str) -> dict:
             - 'affected_databases' (list): A list of databases affected by the detected injection patterns.
 
     Example:
-        >>> import sqlguard
-        >>> sqlguard.analyze_query("SELECT * FROM users; DROP TABLE users")
+        >>> import sqlhund
+        >>> sqlhund.analyze_query("SELECT * FROM users; DROP TABLE users")
         {
             'is_malicious': True,
             'affected_databases': ['users']
         }
-        >>> sqlguard.analyze_query("SELECT id FROM users WHERE id = 1")
+        >>> sqlhund.analyze_query("SELECT id FROM users WHERE id = 1")
         {
             'is_malicious': False,
             'affected_databases': []

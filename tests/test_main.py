@@ -1,6 +1,6 @@
 import pytest
 
-from sqlguard import is_query_malicious, analyze_query
+from sqlhund import is_query_malicious, analyze_query
 
 should_block = [
     "DELETE FROM users",

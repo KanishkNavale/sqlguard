@@ -1,5 +1,5 @@
 [project]
-name = "sqlguard"
+name = "sqlhund"
 version = "0.0.3"
 description = "A Rust library with Python bindings for detecting SQL injection patterns in input strings. Built for speed and designed especially for AI agents that process or generate SQL queries."
 authors = [{ name = "Kanishk Navale", email = "navalekanishk@gmail.com" }]
@@ -19,14 +19,14 @@ classifiers = [
 dependencies = []
 
 [project.urls]
-Repository = "https://github.com/kanishknavale/sqlguard"
+Repository = "https://github.com/kanishknavale/sqlhund"
 
 [build-system]
 requires = ["maturin>=1.7"]
 build-backend = "maturin"
 
 [tool.maturin]
-module-name = "sqlguard"
+module-name = "sqlhund"
 bindings = "pyo3"
 features = ["pyo3/extension-module"]
 
