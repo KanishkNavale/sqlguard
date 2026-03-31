@@ -1,6 +1,6 @@
 [project]
 name = "injectdb"
-version = "0.0.1"
+version = "0.0.2"
 description = "A Python library for detecting SQL injection patterns in input strings. Designed for AI agents."
 authors = [{ name = "Kanishk Navale", email = "navalekanishk@gmail.com" }]
 license = "MIT"

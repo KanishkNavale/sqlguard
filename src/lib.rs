@@ -30,7 +30,7 @@ fn py_analyze_query(py: Python<'_>, query: &str) -> PyResult<Py<PyDict>> {
         "affected_databases",
         PyList::new(
             py,
-            &analysis
+            analysis
                 .affected_databases
                 .iter()
                 .map(|db| db.as_str())
