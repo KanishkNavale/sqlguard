@@ -42,9 +42,6 @@ pub const GENERAL: &[&str] = &[
     // CASE-BASED BLIND INJECTION
     // Matches: CASE WHEN (condition) THEN ... ELSE ... END
     r"(?i)\bcase\s+when\s+.+?\s+then\b",
-];
-
-pub const SANITIZER: &[&str] = &[
     // DDL — any schema modification
     r"(?i)\b(?:DROP|CREATE|ALTER|TRUNCATE)\s+(?:TABLE|INDEX|VIEW|TRIGGER|SCHEMA|DATABASE|SEQUENCE|PROCEDURE|FUNCTION|ROLE|USER)\b",
     // DML — any data modification

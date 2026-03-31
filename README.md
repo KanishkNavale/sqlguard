@@ -38,7 +38,7 @@ make release
     Download the [RbSQLi dataset](https://data.mendeley.com/datasets/xz4d5zj5yw/3) and place it at `tests/data/wild.csv`, then run:
 
     ```bash
-    make test-wild
+    make wildtest
     ```
 
 ## Benchmarks

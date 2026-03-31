@@ -16,3 +16,30 @@ def is_query_malicious(query: str) -> bool:
         False
     """
     ...
+
+def analyze_query(query: str) -> dict:
+    """
+    Audits the input SQL query for potential injection patterns and returns a detailed report.
+
+    Args:
+        query (str): The SQL query to analyze.
+
+    Returns:
+        dict: A dictionary containing the analysis results, including:
+            - 'is_malicious' (bool): Whether the query is potentially malicious.
+            - 'affected_databases' (list): A list of databases affected by the detected injection patterns.
+
+    Example:
+        >>> import injectdb
+        >>> injectdb.analyze_query("SELECT * FROM users; DROP TABLE users")
+        {
+            'is_malicious': True,
+            'affected_databases': ['users']
+        }
+        >>> injectdb.analyze_query("SELECT id FROM users WHERE id = 1")
+        {
+            'is_malicious': False,
+            'affected_databases': []
+        }
+    """
+    ...
