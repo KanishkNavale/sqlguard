@@ -31,9 +31,9 @@ True
 ## Installation
 
 ```bash
-pip install sqlhund  # if using pip
-poetry add sqlhund   # if using Poetry
-uv add sqlhund       # if using UV
+pip install sqlhund  # pip
+poetry add sqlhund   # poetry
+uv add sqlhund       # uv
 ```
 
 Requires Python 3.10+. No runtime dependencies.

@@ -10,40 +10,35 @@ jobs:
   rust:
     name: Rust
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v6
-    - uses: dtolnay/rust-toolchain@stable
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
 
-    - name: Type check
-      run: cargo check --all
+      - name: Type check
+        run: cargo check --all
 
-    - name: Lint
-      run: cargo clippy --all-targets --all-features -- -D warnings
+      - name: Lint
+        run: cargo clippy --all-targets --all-features -- -D warnings
 
-    - name: Format
-      run: cargo fmt --all -- --check
+      - name: Format
+        run: cargo fmt --all -- --check
 
-    - name: Build
-      run: cargo build --all --locked
-
-    - name: Test
-      run: cargo test --all --locked
+      - name: Test
+        run: cargo test --all --locked
 
   python:
     name: Python
     runs-on: ubuntu-latest
-
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
 
-      - uses: actions/setup-python@v6
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
       - name: Install uv
-        run: pip install uv
+        uses: astral-sh/setup-uv@v5
 
       - name: Install dependencies
         run: uv sync --group dev
