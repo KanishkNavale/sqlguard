@@ -15,7 +15,12 @@ permissions:
 
 jobs:
   bump-version:
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true &&
+      (
+      contains(github.event.pull_request.labels.*.name, 'major_release') ||
+      contains(github.event.pull_request.labels.*.name, 'minor_release') ||
+      contains(github.event.pull_request.labels.*.name, 'patch_release')
+      )
 
     runs-on: ubuntu-latest
     steps:
@@ -30,7 +35,7 @@ jobs:
         uses: dtolnay/rust-toolchain@stable
 
       - name: Install uv
-        run: pip install uv
+        uses: astral-sh/setup-uv@v7
 
       - name: Determine Version Bump
         id: bump_logic
@@ -43,7 +48,20 @@ jobs:
           # 1. Get labels from environment
           raw_labels = json.loads('''${{ toJson(github.event.pull_request.labels) }}''')
           labels = [l['name'].lower() for l in raw_labels]
-          bump_type = "major" if "major release" in labels else "minor" if "minor release" in labels else "patch"
+          bump_type = None
+
+          if "major_release" in labels:
+              bump_type = "major"
+
+          if "minor_release" in labels:
+              bump_type = "minor"
+
+          if "patch_release" in labels:
+              bump_type = "patch"
+
+          if not isinstance(bump_type, str):
+              print("No version bump label found. Exiting...")
+              exit(0)
 
           # 2. Read current version from Cargo.toml
           with open("Cargo.toml", "r") as f:
