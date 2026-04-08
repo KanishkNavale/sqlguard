@@ -1,6 +1,6 @@
 [package]
 name = "sqlhund"
-description = "**sqlhund** detects SQL injection patterns with CWE and CAPEC classification. Written in Rust with Python bindings via [PyO3](https://pyo3.rs/), it provides security analysis for AI agents that generate or relay SQL queries, preventing database manipulation through dual-axis threat intelligence (technique vs impact)."
+description = "Rust-powered auditable SQL injection detection for Python. Built for AI agents."
 version = "0.0.9"
 edition = "2024"
 authors = ["Kanishk Navale <navalekanishk@gmail.com>"]

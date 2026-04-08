@@ -10,6 +10,7 @@
 <a href="https://github.com/KanishkNavale/sqlhund/blob/main/LICENSE"><img src="https://img.shields.io/github/license/KanishkNavale/sqlhund" alt="License"></a>
 <a href="https://github.com/KanishkNavale/sqlhund/actions/workflows/ci.yml"><img src="https://github.com/KanishkNavale/sqlhund/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
 <a href="https://github.com/KanishkNavale/sqlhund/actions/workflows/codeql.yml"><img src="https://github.com/KanishkNavale/sqlhund/actions/workflows/codeql.yml/badge.svg" alt="CodeQL"></a>
+<a href="https://pepy.tech/project/sqlhund"><img src="https://static.pepy.tech/personalized-badge/sqlhund?period=total&units=INTERNATIONAL_SYSTEM&left_color=BLACK&right_color=MAGENTA&left_text=Downloads" alt="Downloads"></a>
 </p>
 
 ---

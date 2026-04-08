@@ -1,7 +1,7 @@
 [project]
 name = "sqlhund"
 version = "0.0.9"
-description = "**sqlhund** detects SQL injection patterns with CWE and CAPEC classification.Written in Rust with Python bindings via [PyO3](https://pyo3.rs/), it provides security analysis for AI agents that generate or relay SQL queries, preventing database manipulation through dual-axis threat intelligence (technique vs impact)."
+description = "Rust-powered auditable SQL injection detection for Python. Built for AI agents."
 authors = [{ name = "Kanishk Navale", email = "navalekanishk@gmail.com" }]
 license = "MIT"
 readme = "README.md"
